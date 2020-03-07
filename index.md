@@ -38,7 +38,7 @@ In my review collecting program, I used exception handling in two places to keep
  ![Load from File Function](ImagesForGitHub/Figure03.png)  
 Figure 3 – Load From File Function
 
-	My second use of exception handling came in the function where I return the text of a review for a specific item.  Dictionaries have their own set of exceptions like the KeyError I used.  If I try to return the value of a key that doesn’t exist in the dictionary, this error is returned.  In my exception block, I return a default statement that tells the user that the item they are trying to see the review for wasn’t found.  This function is shown in figure 4.
+My second use of exception handling came in the function where I return the text of a review for a specific item.  Dictionaries have their own set of exceptions like the KeyError I used.  If I try to return the value of a key that doesn’t exist in the dictionary, this error is returned.  In my exception block, I return a default statement that tells the user that the item they are trying to see the review for wasn’t found.  This function is shown in figure 4.
 
 ![Retrieve Review Function](ImagesForGitHub/Figure04.png)   
 Figure 4 – Retrieve Review Function
