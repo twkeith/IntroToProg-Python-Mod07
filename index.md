@@ -21,10 +21,10 @@ Pickling uses two basic operations: a load to get data from a file and a dump to
 My review collecting program uses a very similar format to the last assignment we used for ToDo lists.  I created presentation functions that display information to the user and collects the various inputs needed.  I also created processing functions that process the files and dictionaries.  In the data load function, I had a file_name parameter that opens the file in “rb” mode then uses the pickle load function to retrieve the data.  This is shown in Figure 1.  Similarly, the save function opens the file in “wb” mode and uses the pickle dump function to write back to the file.  This is shown in Figure 2.
 
 ![Pickle.Load Example](ImagesForGitHub/Figure01.png)  
-Figure 1 – Pickle.Load Example
+<em>Figure 1 – Pickle.Load Example</em>
 
  ![Pickle.Dump Example](ImagesForGitHub/Figure02.png)  
-Figure 2 – Pickle.Dump Example
+<em>Figure 2 – Pickle.Dump Example</em>
 
 
 ## EXCEPTION HANDLING
@@ -36,44 +36,44 @@ https://www.datacamp.com/community/tutorials/exception-handling-python
 In my review collecting program, I used exception handling in two places to keep the program running to account for errors.  The first use was in the same load function where I used the pickling method I mentioned earlier.  If python tries to load a file that doesn’t exist, an error happens.  If I put my open file statement within a try block, I can set an except block with a FileNotFoundError exception that will execute if there is no file.  For my review program, in the FileNotFoundError exception block, I create the file with an open file function in write mode.  While testing, I found that pickling caused an error when trying to pickle load an empty file.  That tripped an EOFError so I created another exception block where I put code to return an empty dictionary.  This whole function is shown in Figure 3.
 
  ![Load from File Function](ImagesForGitHub/Figure03.png)  
-Figure 3 – Load From File Function
+<em>Figure 3 – Load From File Function</em>
 
 My second use of exception handling came in the function where I return the text of a review for a specific item.  Dictionaries have their own set of exceptions like the KeyError I used.  If I try to return the value of a key that doesn’t exist in the dictionary, this error is returned.  In my exception block, I return a default statement that tells the user that the item they are trying to see the review for wasn’t found.  This function is shown in figure 4.
 
 ![Retrieve Review Function](ImagesForGitHub/Figure04.png)   
-Figure 4 – Retrieve Review Function
+<em>Figure 4 – Retrieve Review Function</em>
 
 ## TESTING THE CODE
 
 Running the program, we test the pickling functions right at the start.  After picking the type of review you want to view, you can show all the items from that review file with option choice 1.  This is Figure 5.
 
 ![Initial File Load](ImagesForGitHub/Figure05.png)  
-Figure 5 – Initial File Load, Shows Items Loaded
+<em>Figure 5 – Initial File Load, Shows Items Loaded</em>
 
 Next, I will add a record to the dictionary then save it to file to demonstrate the pickle dump function.  This is Figure 6.
 
 ![Saving a File](ImagesForGitHub/Figure06.png)  
-Figure 6 – Saving a File
+<em>Figure 6 – Saving a File</em>
 
 I will switch to command line to show that my file save was successful.  This is Figure 7.
 
 ![Load File from command line](ImagesForGitHub/Figure07.png)  
-Figure 7 – Load File from Command Line
+<em>Figure 7 – Load File from Command Line</em>
 
-	Now to demonstrate the exception handling.  First in the dictionaries with menu option 3.  Figure 8 shows first a successful find in the dictionary then shows an unsuccessful choice that triggers the KeyError exception.
+Now to demonstrate the exception handling.  First in the dictionaries with menu option 3.  Figure 8 shows first a successful find in the dictionary then shows an unsuccessful choice that triggers the KeyError exception.
 
 ![Dictionary Exceptions](ImagesForGitHub/Figure08.png)   
-Figure 8 – Dictionary Exceptions
+<em>Figure 8 – Dictionary Exceptions</em>
 
 Now to test the file loading exceptions.  No movie review file exists as of run time so when I try to load it.  I will get an error and create the file.  If I then try to load the file again, I’ll get the file empty error.  This is shown in Figure 9.
 
 ![FileNotFound and EOF Exceptions](ImagesForGitHub/Figure09.png)  
-Figure 9 – FileNotFound and EOF Exception Examples
+<em>Figure 9 – FileNotFound and EOF Exception Examples</em>
 
 I added a couple reviews to the movie file and saved.  Then I reloaded the file and printed all the reviewed items in the second dictionary.  This is shown in Figure 10.
 
 ![Reloading a file](ImagesForGitHub/Figure10.png)  
-Figure 10 – Reloading a file, printing keys from Dictionary
+<em>Figure 10 – Reloading a file, printing keys from Dictionary</em>
 
 ## SUMMARY
 
